@@ -12,10 +12,11 @@ public class VerifyIfHasCertificationUseCase {
 	private CertificationStudentRepository certificationStudentRepository;
 
 	public boolean execute(VerifyHasCertificationDTO dto){
-		this.certificationStudentRepository.findByStudentEmailAndTechnology(dto.getEmail(), dto.getTechnology());
-		if(dto.getEmail().equals("aa@gmail.com") && dto.getTechnology().equals("JAVA")){
+		var result = this.certificationStudentRepository.findByStudentEmailAndTechnology(dto.getEmail(), dto.getTechnology());
+		// já fez a certificação, não pode fazer de novo
+		if(!result.isEmpty()){
 			return true;
-		} 
+		}
 
 		return false;
 	}
