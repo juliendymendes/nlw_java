@@ -15,8 +15,6 @@ import com.me.certification_nlw.modules.questions.entities.AlternativesEntity;
 import com.me.certification_nlw.modules.questions.entities.QuestionEntity;
 import com.me.certification_nlw.modules.questions.repositories.QuestionRepository;
 
-import lombok.Builder;
-
 @RestController
 @RequestMapping("/questions")
 
